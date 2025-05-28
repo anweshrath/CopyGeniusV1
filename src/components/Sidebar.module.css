@@ -1,0 +1,243 @@
+.sidebar {
+  width: 280px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.sidebar.dark {
+  background-color: var(--color-bg-secondary-dark);
+  border-right: 1px solid var(--color-border-dark);
+}
+
+.sidebar.light {
+  background-color: var(--color-bg-secondary-light);
+  border-right: 1px solid var(--color-border-light);
+}
+
+.sidebarHeader {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.closeButton {
+  display: none;
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.newButton {
+  margin: 0 1rem 1.5rem;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.dark .newButton {
+  background-color: var(--color-accent-dark);
+  color: white;
+}
+
+.light .newButton {
+  background-color: var(--color-accent-light);
+  color: white;
+}
+
+.newButton:hover {
+  transform: translateY(-2px);
+}
+
+.dark .newButton:hover {
+  background-color: var(--color-accent-hover-dark);
+}
+
+.light .newButton:hover {
+  background-color: var(--color-accent-hover-light);
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.dark .nav a {
+  color: var(--color-text-primary-dark);
+}
+
+.light .nav a {
+  color: var(--color-text-primary-light);
+}
+
+.nav a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark .nav a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.nav a.active {
+  font-weight: 600;
+}
+
+.dark .nav a.active {
+  background-color: rgba(139, 92, 246, 0.15);
+  color: var(--color-accent-dark);
+}
+
+.light .nav a.active {
+  background-color: rgba(124, 58, 237, 0.1);
+  color: var(--color-accent-light);
+}
+
+.sidebarFooter {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid;
+}
+
+.dark .sidebarFooter {
+  border-color: var(--color-border-dark);
+}
+
+.light .sidebarFooter {
+  border-color: var(--color-border-light);
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  width: 100%;
+  background: none;
+  border: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.dark .themeToggle {
+  color: var(--color-text-primary-dark);
+}
+
+.light .themeToggle {
+  color: var(--color-text-primary-light);
+}
+
+.themeToggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark .themeToggle:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.version {
+  text-align: center;
+  font-size: 0.8rem;
+  opacity: 0.6;
+}
+
+/* Mobile styles */
+.mobileHeader {
+  display: none;
+  padding: 1rem;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid;
+}
+
+.menuButton {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobileTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 90;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    width: 280px;
+    z-index: 100;
+  }
+  
+  .sidebar.open {
+    left: 0;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .mobileHeader {
+    display: flex;
+  }
+  
+  .closeButton {
+    display: block;
+  }
+  
+  .overlay {
+    display: block;
+  }
+}

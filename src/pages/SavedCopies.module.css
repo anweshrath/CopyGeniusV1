@@ -1,0 +1,486 @@
+.savedCopies {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.savedCopies.dark {
+  color: var(--color-text-primary-dark);
+}
+
+.savedCopies.light {
+  color: var(--color-text-primary-light);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.newButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.dark .newButton {
+  background-color: var(--color-accent-dark);
+  color: white;
+}
+
+.light .newButton {
+  background-color: var(--color-accent-light);
+  color: white;
+}
+
+.newButton:hover {
+  transform: translateY(-2px);
+}
+
+.dark .newButton:hover {
+  background-color: var(--color-accent-hover-dark);
+}
+
+.light .newButton:hover {
+  background-color: var(--color-accent-hover-light);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.searchContainer {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.dark .searchInput {
+  background-color: var(--color-bg-secondary-dark);
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-text-primary-dark);
+}
+
+.light .searchInput {
+  background-color: var(--color-bg-secondary-light);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-primary-light);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: var(--color-accent-light);
+}
+
+.dark .searchInput:focus {
+  border-color: var(--color-accent-dark);
+}
+
+.filterContainer {
+  display: flex;
+  gap: 1rem;
+  position: relative;
+}
+
+.filterButton, .sortButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dark .filterButton, .dark .sortButton {
+  background-color: var(--color-bg-secondary-dark);
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-text-primary-dark);
+}
+
+.light .filterButton, .light .sortButton {
+  background-color: var(--color-bg-secondary-light);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-primary-light);
+}
+
+.filterButton:hover, .sortButton:hover {
+  border-color: var(--color-accent-light);
+}
+
+.dark .filterButton:hover, .dark .sortButton:hover {
+  border-color: var(--color-accent-dark);
+}
+
+.filterMenu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 250px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  z-index: 10;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .filterMenu {
+  background-color: var(--color-card-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+.light .filterMenu {
+  background-color: var(--color-card-light);
+  border: 1px solid var(--color-border-light);
+}
+
+.filterSection {
+  margin-bottom: 1.5rem;
+}
+
+.filterSection:last-child {
+  margin-bottom: 0;
+}
+
+.filterSection h3 {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.filterOptions label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filterOptions label:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark .filterOptions label:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.filterOptions label.selected {
+  background-color: rgba(139, 92, 246, 0.15);
+  color: var(--color-accent-light);
+}
+
+.dark .filterOptions label.selected {
+  background-color: rgba(139, 92, 246, 0.15);
+  color: var(--color-accent-dark);
+}
+
+.filterOptions input {
+  margin: 0;
+}
+
+.copiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.copyCard {
+  padding: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dark .copyCard {
+  background-color: var(--color-card-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+.light .copyCard {
+  background-color: var(--color-card-light);
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.copyCard:hover {
+  transform: translateY(-4px);
+}
+
+.dark .copyCard:hover {
+  background-color: var(--color-card-hover-dark);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.light .copyCard:hover {
+  background-color: var(--color-card-hover-light);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.copyCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.copyTypeIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .copyTypeIcon {
+  background-color: rgba(139, 92, 246, 0.15);
+  color: var(--color-accent-dark);
+}
+
+.light .copyTypeIcon {
+  background-color: rgba(124, 58, 237, 0.1);
+  color: var(--color-accent-light);
+}
+
+.copyActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  color: inherit;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.deleteButton:hover {
+  opacity: 1;
+  color: #e53e3e;
+}
+
+.copyTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.copyMeta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.copyType {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.dark .copyType {
+  color: var(--color-text-secondary-dark);
+}
+
+.light .copyType {
+  color: var(--color-text-secondary-light);
+}
+
+.copyDate {
+  opacity: 0.7;
+}
+
+.copyPreview {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.copyFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.copyFramework {
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+}
+
+.dark .copyFramework {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.light .copyFramework {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.editButton {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.dark .editButton {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.light .editButton {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.editButton:hover {
+  background-color: var(--color-accent-light);
+  color: white;
+}
+
+.dark .editButton:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.dark .emptyState {
+  background-color: var(--color-card-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+.light .emptyState {
+  background-color: var(--color-card-light);
+  border: 1px solid var(--color-border-light);
+}
+
+.emptyIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.emptyState h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.emptyState p {
+  margin-bottom: 1.5rem;
+  opacity: 0.7;
+}
+
+.createButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.dark .createButton {
+  background-color: var(--color-accent-dark);
+  color: white;
+}
+
+.light .createButton {
+  background-color: var(--color-accent-light);
+  color: white;
+}
+
+.createButton:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .toolbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .searchContainer {
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .filterContainer {
+    width: 100%;
+  }
+  
+  .filterButton, .sortButton {
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .filterMenu {
+    width: 100%;
+    left: 0;
+    right: auto;
+  }
+  
+  .copiesGrid {
+    grid-template-columns: 1fr;
+  }
+}

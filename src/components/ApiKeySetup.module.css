@@ -1,0 +1,241 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container.dark {
+  background-color: var(--color-bg-primary-dark);
+  color: var(--color-text-primary-dark);
+}
+
+.container.light {
+  background-color: var(--color-bg-primary-light);
+  color: var(--color-text-primary-light);
+}
+
+.card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 2.5rem;
+}
+
+.dark .card {
+  background-color: var(--color-card-dark);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.light .card {
+  background-color: var(--color-card-light);
+}
+
+.logoContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  line-height: 1.5;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.inputGroup input {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.dark .inputGroup input {
+  background-color: var(--color-bg-secondary-dark);
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-text-primary-dark);
+}
+
+.light .inputGroup input {
+  background-color: var(--color-bg-secondary-light);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-primary-light);
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: var(--color-accent-light);
+}
+
+.dark .inputGroup input:focus {
+  border-color: var(--color-accent-dark);
+}
+
+.inputError {
+  border-color: #e53e3e !important;
+}
+
+.errorMessage {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.helpText {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.helpText a {
+  color: var(--color-accent-light);
+  text-decoration: none;
+}
+
+.dark .helpText a {
+  color: var(--color-accent-dark);
+}
+
+.submitButton {
+  background-color: var(--color-accent-light);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.dark .submitButton {
+  background-color: var(--color-accent-dark);
+}
+
+.submitButton:hover {
+  background-color: var(--color-accent-hover-light);
+  transform: translateY(-2px);
+}
+
+.dark .submitButton:hover {
+  background-color: var(--color-accent-hover-dark);
+}
+
+.themeToggle {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.themeButton {
+  background: none;
+  border: none;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .themeButton {
+  color: var(--color-text-secondary-dark);
+}
+
+.themeButton:hover {
+  color: var(--color-accent-light);
+}
+
+.dark .themeButton:hover {
+  color: var(--color-accent-dark);
+}
+
+.providerSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.providerSelector label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .radioGroup label {
+  background-color: var(--color-bg-secondary-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+.light .radioGroup label {
+  background-color: var(--color-bg-secondary-light);
+  border: 1px solid var(--color-border-light);
+}
+
+.radioGroup label.selected {
+  background-color: var(--color-accent-light);
+  color: white;
+  border-color: var(--color-accent-light);
+}
+
+.dark .radioGroup label.selected {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.radioGroup input {
+  margin: 0;
+}

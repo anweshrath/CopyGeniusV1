@@ -1,0 +1,362 @@
+.settings {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.settings.dark {
+  color: var(--color-text-primary-dark);
+}
+
+.settings.light {
+  color: var(--color-text-primary-light);
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.successMessage {
+  background-color: rgba(72, 187, 120, 0.1);
+  color: #48bb78;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #48bb78;
+}
+
+.settingsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1.5rem;
+}
+
+.settingCard {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.dark .settingCard {
+  background-color: var(--color-card-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+.light .settingCard {
+  background-color: var(--color-card-light);
+  border: 1px solid var(--color-border-light);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.settingHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid;
+}
+
+.dark .settingHeader {
+  border-color: var(--color-border-dark);
+}
+
+.light .settingHeader {
+  border-color: var(--color-border-light);
+}
+
+.settingHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.settingContent {
+  padding: 1.5rem;
+}
+
+.settingContent > p {
+  margin-bottom: 1.5rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.themeSelector {
+  display: flex;
+  gap: 1rem;
+}
+
+.themeOption {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.dark .themeOption {
+  background-color: var(--color-bg-secondary-dark);
+}
+
+.light .themeOption {
+  background-color: var(--color-bg-secondary-light);
+}
+
+.themeOption:hover {
+  transform: translateY(-2px);
+}
+
+.themeOption.selected {
+  border-color: var(--color-accent-light);
+}
+
+.dark .themeOption.selected {
+  border-color: var(--color-accent-dark);
+}
+
+.themeOption svg {
+  font-size: 2rem;
+}
+
+.apiProviderSelector {
+  margin-bottom: 2rem;
+}
+
+.apiProviderSelector h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.radioGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.radioGroup label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dark .radioGroup label {
+  background-color: var(--color-bg-secondary-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+.light .radioGroup label {
+  background-color: var(--color-bg-secondary-light);
+  border: 1px solid var(--color-border-light);
+}
+
+.radioGroup label.selected {
+  background-color: var(--color-accent-light);
+  color: white;
+  border-color: var(--color-accent-light);
+}
+
+.dark .radioGroup label.selected {
+  background-color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.radioGroup input {
+  margin: 0;
+}
+
+.currentApiKey, .updateApiKey {
+  margin-bottom: 2rem;
+}
+
+.currentApiKey h3, .updateApiKey h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.apiKeyDisplay {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-family: monospace;
+  word-break: break-all;
+}
+
+.dark .apiKeyDisplay {
+  background-color: var(--color-bg-secondary-dark);
+  border: 1px solid var(--color-border-dark);
+}
+
+.light .apiKeyDisplay {
+  background-color: var(--color-bg-secondary-light);
+  border: 1px solid var(--color-border-light);
+}
+
+.apiKeyDisplay span {
+  flex: 1;
+}
+
+.visibilityToggle {
+  background: none;
+  border: none;
+  color: inherit;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.visibilityToggle:hover {
+  opacity: 1;
+}
+
+.apiKeyInput {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.apiKeyInput input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.dark .apiKeyInput input {
+  background-color: var(--color-bg-secondary-dark);
+  border: 1px solid var(--color-border-dark);
+  color: var(--color-text-primary-dark);
+}
+
+.light .apiKeyInput input {
+  background-color: var(--color-bg-secondary-light);
+  border: 1px solid var(--color-border-light);
+  color: var(--color-text-primary-light);
+}
+
+.apiKeyInput input:focus {
+  outline: none;
+  border-color: var(--color-accent-light);
+}
+
+.dark .apiKeyInput input:focus {
+  border-color: var(--color-accent-dark);
+}
+
+.updateButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.dark .updateButton {
+  background-color: var(--color-accent-dark);
+  color: white;
+}
+
+.light .updateButton {
+  background-color: var(--color-accent-light);
+  color: white;
+}
+
+.updateButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.dark .updateButton:hover:not(:disabled) {
+  background-color: var(--color-accent-hover-dark);
+}
+
+.light .updateButton:hover:not(:disabled) {
+  background-color: var(--color-accent-hover-light);
+}
+
+.updateButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dataActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.dangerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  background-color: rgba(229, 62, 62, 0.1);
+  color: #e53e3e;
+  border: 1px solid rgba(229, 62, 62, 0.3);
+}
+
+.dangerButton:hover {
+  background-color: #e53e3e;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.dataInfo {
+  padding: 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.dark .dataInfo {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.light .dataInfo {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.aboutInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.infoItem h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.infoItem p {
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .settingsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .themeSelector {
+    flex-direction: column;
+  }
+  
+  .radioGroup {
+    flex-direction: column;
+  }
+}

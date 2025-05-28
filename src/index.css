@@ -1,0 +1,135 @@
+:root {
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  
+  /* Light theme */
+  --color-bg-primary-light: #ffffff;
+  --color-bg-secondary-light: #f8f9fa;
+  --color-text-primary-light: #212529;
+  --color-text-secondary-light: #6c757d;
+  --color-accent-light: #7c3aed;
+  --color-accent-hover-light: #6d28d9;
+  --color-border-light: #e9ecef;
+  --color-card-light: #ffffff;
+  --color-card-hover-light: #f8f9fa;
+  
+  /* Dark theme */
+  --color-bg-primary-dark: #121212;
+  --color-bg-secondary-dark: #1e1e1e;
+  --color-text-primary-dark: #f8f9fa;
+  --color-text-secondary-dark: #adb5bd;
+  --color-accent-dark: #8b5cf6;
+  --color-accent-hover-dark: #7c3aed;
+  --color-border-dark: #2d2d2d;
+  --color-card-dark: #1e1e1e;
+  --color-card-hover-dark: #252525;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Transitions */
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text-secondary-light);
+  border-radius: 4px;
+}
+
+.dark-theme ::-webkit-scrollbar-thumb {
+  background: var(--color-text-secondary-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-light);
+}
+
+.dark-theme ::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-dark);
+}
+
+/* Button styles */
+button {
+  font-family: var(--font-primary);
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+/* Form elements */
+input, textarea, select {
+  font-family: var(--font-primary);
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+/* Light theme */
+.light-theme {
+  background-color: var(--color-bg-primary-light);
+  color: var(--color-text-primary-light);
+}
+
+/* Dark theme */
+.dark-theme {
+  background-color: var(--color-bg-primary-dark);
+  color: var(--color-text-primary-dark);
+}
